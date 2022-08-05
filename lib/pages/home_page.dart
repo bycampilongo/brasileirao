@@ -1,4 +1,3 @@
-import 'package:brasileirao/controllers/home_controller.dart';
 import 'package:brasileirao/models/team.dart';
 import 'package:brasileirao/pages/team_page.dart';
 import 'package:brasileirao/repositories/team_repository.dart';
@@ -12,15 +11,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var homeController;
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    homeController = HomeController();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
