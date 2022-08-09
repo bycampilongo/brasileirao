@@ -1,3 +1,4 @@
+import 'package:brasileirao/widgets/shild.dart';
 import 'package:flutter/material.dart';
 
 import '../models/team.dart';
@@ -17,8 +18,9 @@ class StaticsPage extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.all(24),
-          child: Image.network(
-            team.shild.replaceAll('40x40', '100X100'),
+          child: Shild(
+            image: team.shild,
+            width: 250,
           ),
         ),
         Text(

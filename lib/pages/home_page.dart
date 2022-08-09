@@ -1,6 +1,7 @@
 import 'package:brasileirao/models/team.dart';
 import 'package:brasileirao/pages/team_page.dart';
 import 'package:brasileirao/repositories/team_repository.dart';
+import 'package:brasileirao/widgets/shild.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
@@ -23,7 +24,10 @@ class _HomePageState extends State<HomePage> {
             itemBuilder: (BuildContext context, int team) {
               final List<Team> ranking = repository.teams;
               return ListTile(
-                leading: Image.network(ranking[team].shild),
+                leading: Shild(
+                  image: ranking[team].shild,
+                  width: 40,
+                ),
                 title: Text(ranking[team].name),
                 subtitle: Text('Títulos ${ranking[team].titles.length}'),
                 trailing: Text(ranking[team].points.toString()),

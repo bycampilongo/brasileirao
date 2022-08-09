@@ -7,6 +7,8 @@ import 'package:brasileirao/repositories/team_repository.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
+import 'edit_title_page.dart';
+
 class TeamPage extends StatefulWidget {
   Team team;
   TeamPage({required this.team, Key? key}) : super(key: key);
@@ -43,6 +45,12 @@ class _TeamPageState extends State<TeamPage> {
                 leading: Icon(Icons.emoji_events),
                 title: Text(team.titles[index].championship),
                 trailing: Text(team.titles[index].year),
+                onTap: () {
+                  Get.to(
+                    EditTitlePage(title: team.titles[index]),
+                    fullscreenDialog: true,
+                  );
+                },
               );
             },
             separatorBuilder: (_, __) => Divider(),
